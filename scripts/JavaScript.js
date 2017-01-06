@@ -1,4 +1,4 @@
-﻿function go() {
+﻿function headingChange() {
     var greeting = "Good morning!";
-    $(document).getElementById("container").find("h1").text(greeting);
+    $(document).find("h1").text(greeting);
 }
