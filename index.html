@@ -1,28 +1,17 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <base href="/" />
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--minified jQuery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <!-- Latest compiled and minified Bootstrap CSS -->
+    <!-- minified Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!-- Latest compiled and minified Bootstrap JavaScript -->
+    <!-- minified Bootstrap JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="../style/StyleSheet.min.css">
-    
-    <!-- Polyfill(s) for older browsers -->
-    <script src="node_modules/core-js/client/shim.min.js"></script>
-
-    <script src="node_modules/zone.js/dist/zone.js"></script>
-    <script src="node_modules/systemjs/dist/system.src.js"></script>
-
-    <script src="systemjs.config.js"></script>
-    <script>
-      System.import('app').catch(function(err){ console.error(err); });
-    </script>
-<!--[if lt IE 9]>
+  <!-- creates newer elements in older browsers as necessary-->
+  <!--[if lt IE 9]>
     <script>
         document.createElement("article");
         document.createElement("aside");
@@ -32,12 +21,178 @@
         document.createElement("nav");
         document.createElement("section");
     </script>
-    <![endif]-->
-
-    <script type="text/javascript" src="scripts/JavaScript.js"></script>
+  <![endif]-->
+    <style>
+        body {
+            background-color: navy;
+            color: white;
+            font-family: monospace;
+        }
+        h1{
+            text-shadow: 0 0 20px rgba(33, 172, 255, 0.8), 0 0 13px rgba(33, 172, 255, 0.8), 0 0 9px rgba(17, 225, 255, 0.8), 0 0 5px rgba(255, 255, 255, 0.8);
+        }
+        h2 {
+            text-shadow: 0 0 20px rgba(33, 172, 255, 0.8), 0 0 13px rgba(33, 172, 255, 0.8), 0 0 9px rgba(17, 225, 255, 0.8), 0 0 5px rgba(255, 255, 255, 0.8);
+        }
+        a {
+            color:aqua;
+        }
+        header {
+            height: 145px;
+            position: absolute;
+            width: 100%;
+            z-index: -3;
+        }
+        #headshot {
+            border-radius: 100%;
+            height: 125px;
+            position: absolute;
+            padding: 10px;
+            z-index: 1;
+        }
+        header h1{
+            background: black;
+            margin-top: 35px;
+            width: 100%;
+            height: 55px;
+            padding: 20px;
+            padding-top: 10px;
+            padding-left: 150px;
+            position: absolute;
+            z-index: -1;
+        }
+        nav {
+            width: 125px;
+        }
+        nav input {
+            display: block;
+            position: relative;
+            margin: 10px;
+            width: 80px;
+            background-color: darkslategray;
+        }
+        nav img {
+            position: absolute;
+            width: 105px;
+            margin: 0px 10px; 
+            z-index: -2;
+            top: 0;
+            border-radius: 10px;
+            box-shadow: 2px 2px 2px black;
+        }
+        div {
+            position: relative;
+            top: 100px;
+            left: 150px;
+            z-index: 3;
+            width: 75%;
+        }
+    </style>
     <title>Kyle Stockton</title>
 </head>
 <body>
-	<my-app>Initializing...</my-app>
+  <header id="banner">
+    <img id="headshot" onclick="displayElementById('intro')"
+      src="../images/StocktonKyle_headshot_reduced_square.jpg" />
+    <h1>Kyle Stockton</h1>
+  <nav>
+      <img src="../images/brushed_metal_blue.png" />
+  </nav>
+  </header>
+  <div id="intro">
+    <h2>Welcome!</h2>
+          My name is Kyle Stockton and I am an aspiring junior developer in the 
+	  Portland, OR area. I specialize in C#, particularly ASP.NET and 
+	  Unity3D, but I'm also familiar with JavaScript, Sass, SQL, HTML, and 
+	  Clojure.<br />
+      This site is a work in progress, so please check back later for new 
+	  developments.<br />
+      In the meantime, feel free to contact me at 
+      <a href="mailto:kylestockton@mail.com">kylestockton@mail.com</a> or (503) 661-8852,<br /> or learn more about me at <a href="https://github.com/kyle-stockton">github.com/kyle-stockton</a> and <a href="https://www.linkedin.com/in/kyle-stockton-48983041">linkedin.com/in/kyle-stockton-48983041</a>.<br />
+      Thanks for visiting!<br />
+
+  </div>
+  <div id="resume">
+	<h2>Resume</h2>
+	<h3>Experience Summary</h3>
+	<ul>
+      <li>Collaborated on development of web-based application using ASP.NET MVC, jQuery, Bootstrap, Sass, and SQL Server following Scrum methodology</li>
+	  <li>Planned, developed, and debugged a variety of simple applications in C#, Python, and JavaScript as part of rigorous software development bootcamp coursework</li>
+	  <li>Directed and instructed newer campers in team web development project</li>
+	  <li>Developed and published 3-D action/adventure game for iOS using Unity</li>
+	  <li>Earned AAS degree in Computer Game Development, graduating Valedictorian</li>
+	  <li>Built games in Unity and Unreal for group and individual college projects</li>
+	  <li>Created portfolio site in WordPress featuring visual effects and shaders for Unity and Maya</li>
+	  <li>Interned in college IT department, focusing on made-to-order system builds</li>
+	</ul>
+	<h3>Skills Summary</h3>
+	<ul>
+	  <li>Programming / Development: C#; Javascript; Python; HTML; CSS; Clojure; R; ShaderLab</li>
+	  <li>Operating Systems: Windows XP, 7, 8, 10; Linux Ubuntu, OS X; Android 4; iOS 6 & up</li>
+	  <li>Frameworks: Unity 4.x, 5.x; .NET Framework 4.5; ASP.NET; ASP.NET MVC; Entity Framework; Windows Forms; Bootstrap; jQuery</li>
+	  <li>Architectural Paradigms: MVC; JSON-interfacing APIs</li>
+	  <li>Business Domains: Video Games; Social Media</li>
+	  <li>IDE: Visual Studio 2015; Unity; MonoDevelop; IDLE; Emacs; Xcode</li>
+	  <li>Methodologies: Agile / Scrum</li>
+	  <li>Database Management: SQL Server 2008, 2012; MySQL; SQLite</li>
+	  <li>Content Management: WordPress; DreamWeaver</li>
+	</ul>
+	<h3>Experience</h3>
+        <h4>Behdad Sami Interactive, Beaverton, OR<br />
+        	8/2014 - 5/2016</h4>
+	    <h5>Contracted Unity developer.  Developed a published 3-D action/adventure game for iOS.</h5>
+		<p><em>Skill set: </em>C#;  JavaScript;  Unity;  MonoDevelop;  Xcode</p>
+		<p><em>Key projects include:   </em></p>
+		<ul>
+		    <li>User interface development, including prototype swipe-based control scheme</li>
+	        <li>Camera tracking / control development, including transition between first- and third-person views</li>
+			<li>Level design based on creative interpretation of design document to optimize visual asset economics</li>
+		</ul>
+		<h4>Borders Books &amp Music, Gresham, OR<br />
+            10/2007 - 9/2011</h4>
+		<h5>Periodicals specialist.</h5>
+		<p><em>Skill set: </em>Efficient sorting/processing;  time management;  problem solving;  teamwork</p>
+		<p><em>Key responsibilities include:   </em></p>
+		<ul>
+			<li>Processing incoming shipments, with emphasis on inventory control and efficient display implementation</li>
+			<li>Maintaining periodical section for optimal organizational efficiency and visual impact</li>
+			<li>Pulling and accounting for expired titles, responsible for loss prevention and timely cycling of product</li>
+			<li>Engaging in standard customer service and retail duties throughout all store departments</li>
+		</ul>
+		<h3>Education and Training</h3>
+		<h4>The Tech Academy, Portland, OR</h4>
+		<h5>Comprehensive, self-paced coding bootcamp</h5>
+		<ul>
+			<li>Coding in HTML, CSS, Python, JavaScript, and C#</li>
+			<li>Experience in self-directed software development using Visual Studio and IDLE</li>
+			<li>Database management using SQL Server, MySQL, and SQLite</li>
+			<li>Content management with WordPress</li>
+			<li>Principles of computer science, project management (Agile/Scrum), and version control</li>
+			<li>Practical team-based full-stack development using Entity Framework, MVC, Razor, Bootstrap, Sass and jQuery</li>
+		</ul>
+		<h4>Mt. Hood Community College, Gresham, OR</h4>
+		<h5>Graduated Valedictorian and received Associate of Applied Science Degree in Computer Information Systems with focus in Computer Game Development.</h5>
+		<ul>
+			<li>Programming in C#, C++, HTML/CSS, ShaderLab, and Unreal Blueprints</li>
+			<li>Game development theory as well as individual- and team-based development projects in Unity and Unreal</li>
+			<li>Website development theory and application using DreamWeaver, Flash, and WordPress</li>
+			<li>Illustration and graphic design in digital and physical mediums</li>
+			<li>Visual asset creation using Photoshop, GIMP, Maya, and Max</li>
+			<li>Principles of animation with practical exercises in Flash and Maya</li>
+			<li>Calculus</li>
+			<li>IT Department Internship</li>
+		</ul>
+	</div>
 </body>
 </html>
+
+<script>
+  function displayElementById(Id) {
+      var divs = (document).getElementsByTagName('div');
+      for (var i = 0; i < divs.length; i++) {
+        divs[i].style.display = 'none';
+      }
+      (document).getElementById(Id).style.display = 'block'
+
+  }
+</script>
