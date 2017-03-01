@@ -26,22 +26,26 @@
         body {
             background-color: navy;
             color: white;
+            font-size: 16px;
             font-family: monospace;
         }
+		a {
+			color: aqua;
+			cursor: pointer;
+		}
+		a:hover {
+			color: cornflowerblue;
+		}
         h1{
             text-shadow: 0 0 20px rgba(33, 172, 255, 0.8), 0 0 13px rgba(33, 172, 255, 0.8), 0 0 9px rgba(17, 225, 255, 0.8), 0 0 5px rgba(255, 255, 255, 0.8);
         }
         h2 {
             text-shadow: 0 0 20px rgba(33, 172, 255, 0.8), 0 0 13px rgba(33, 172, 255, 0.8), 0 0 9px rgba(17, 225, 255, 0.8), 0 0 5px rgba(255, 255, 255, 0.8);
         }
-        a {
-            color:aqua;
-        }
         header {
             height: 145px;
             position: absolute;
             width: 100%;
-            z-index: -3;
         }
         #headshot {
             border-radius: 100%;
@@ -64,57 +68,85 @@
         nav {
             width: 125px;
         }
-        nav input {
-            display: block;
-            position: relative;
-            margin: 10px;
-            width: 80px;
-            background-color: darkslategray;
-        }
         nav img {
             position: absolute;
             width: 105px;
-            margin: 0px 10px; 
+            margin: 0px 10px;
             z-index: -2;
             top: 0;
             border-radius: 10px;
             box-shadow: 2px 2px 2px black;
         }
-        div {
+		nav #nav-btns {
+			position:relative;
+			top: 120px;
+			left: 10px;
+		}
+        nav a {
+            display: block;
             position: relative;
+            margin: 10px;
+			margin-left: -5px;
+			padding-left: 5px;
+			box-shadow: 0px 0px 30px darkslategray inset;
+            width: 135px;
+			font-size: 16px;
+            background-color: rgba(80,80,160,0.5);
+			z-index: 10;
+        }
+        section {
+            position: relative;
+			display: none;
             top: 100px;
             left: 150px;
             z-index: 3;
             width: 75%;
         }
+		#intro {
+			display: block;
+		}
     </style>
+    <script>
+        function displayElementById(Id) {
+            var divs = (document).getElementsByTagName('section');
+            for (var i = 0; i < divs.length; i++) {
+                divs[i].style.display = 'none';
+            }
+            (document).getElementById(Id).style.display = 'block';
+        }
+    </script>
     <title>Kyle Stockton</title>
 </head>
 <body>
   <header id="banner">
     <img id="headshot" onclick="displayElementById('intro')"
-      src="../images/StocktonKyle_headshot_reduced_square.jpg" />
+      src="images/StocktonKyle_headshot_reduced_square.jpg" />
     <h1>Kyle Stockton</h1>
   <nav>
-      <img src="../images/brushed_metal_blue.png" />
+      <img src="images/brushed_metal_blue.png" />
+	  <div id="nav-btns">
+		<a onclick="displayElementById('intro')">Welcome</a>
+		<a onclick="displayElementById('resume')">Resume</a>
+		<a onclick="displayElementById('recommendation')">Recommendation</a>
+	  </div>
   </nav>
   </header>
-  <div id="intro">
+  <section id="intro">
     <h2>Welcome!</h2>
-          My name is Kyle Stockton and I am an aspiring junior developer in the 
-	  Portland, OR area. I specialize in C#, particularly ASP.NET and 
-	  Unity3D, but I'm also familiar with JavaScript, Sass, SQL, HTML, and 
+          My name is Kyle Stockton and I am an aspiring junior developer in the
+	  Portland, OR area. I specialize in C#, particularly ASP.NET and
+	  Unity, but I'm also familiar with JavaScript, Python, C++, Sass, SQL, HTML, and
 	  Clojure.<br />
-      This site is a work in progress, so please check back later for new 
-	  developments.<br />
-      In the meantime, feel free to contact me at 
-      <a href="mailto:kylestockton@mail.com">kylestockton@mail.com</a> or (503) 661-8852,<br /> 
-	  or learn more about me at <a href="https://github.com/kyle-stockton">github.com/kyle-stockton</a> 
-	  and <a href="https://www.linkedin.com/in/kyle-stockton-48983041">linkedin.com/in/kyle-stockton-48983041</a>.<br />
+      Feel free to contact me at<br />
+      <a href="mailto:kylestockton@mail.com">kylestockton@mail.com</a>
+       or (503) 661-8852,<br /> 
+	  or learn more about me at <a href="https://github.com/kyle-stockton">github.com/kyle-stockton</a>
+	  and <a href="https://www.linkedin.com/in/kyle-stockton-48983041">
+      linkedin.com/in/kyle-stockton-48983041</a>.<br />
       Thanks for visiting!<br />
 
-  </div>
-  <div id="resume">
+  </section>
+  <section id="resume">
 	<h2>Resume</h2>
 	<h3>Experience Summary</h3>
 	<ul>
@@ -124,12 +156,11 @@
 	  <li>Developed and published 3-D action/adventure game for iOS using Unity</li>
 	  <li>Earned AAS degree in Computer Game Development, graduating Valedictorian</li>
 	  <li>Built games in Unity and Unreal for group and individual college projects</li>
-	  <li>Created portfolio site in WordPress featuring visual effects and shaders for Unity and Maya</li>
 	  <li>Interned in college IT department, focusing on made-to-order system builds</li>
 	</ul>
 	<h3>Skills Summary</h3>
 	<ul>
-	  <li>Programming / Development: C#; Javascript; Python; HTML; CSS; Clojure; R; ShaderLab</li>
+	  <li>Programming / Development: C#; C++; Javascript; Python; HTML; CSS; Clojure; R; ShaderLab</li>
 	  <li>Operating Systems: Windows XP, 7, 8, 10; Linux Ubuntu, OS X; Android 4; iOS 6 & up</li>
 	  <li>Frameworks: Unity 4.x, 5.x; .NET Framework 4.5; ASP.NET; ASP.NET MVC; Entity Framework; Windows Forms; Bootstrap; jQuery</li>
 	  <li>Architectural Paradigms: MVC; JSON-interfacing APIs</li>
@@ -184,29 +215,29 @@
 			<li>Calculus</li>
 			<li>IT Department Internship</li>
 		</ul>
-	</div>
-	<div id="recommendation">
+	</section>
+	<section id="recommendation">
 		<h2>Recommendation</h2>
 		<h3>Letter of Recommendation:  <br />
 			Kyle Stockton</h3>
 
-		<p>	My name is Adam Smith and I am the Lead Instructor at The Tech Academy. The Tech Academy runs a Software Developer Boot Camp that trains students in seven programming 
+		<p>	My name is Adam Smith and I am the Lead Instructor at The Tech Academy. The Tech Academy runs a Software Developer Boot Camp that trains students in seven programming
 		languages. The program includes real-life experience through involvement in a Live Project, overseen by seasoned developers.</p>
-		
+
 		<p>	I'm writing today to say some things about one of our students: Kyle Stockton.</p>
-		
-		<p>	I have great respect for Kyle. He has a strong work ethic, drive to learn new skills and a calm demeanor. He has excellent technical knowledge and is proficient in applying 
-		it in actual work environment. Towards the end of his training, Kyle was part of a team that took on a challenging web/database project for one of our clients. Here his work 
+
+		<p>	I have great respect for Kyle. He has a strong work ethic, drive to learn new skills and a calm demeanor. He has excellent technical knowledge and is proficient in applying
+		it in actual work environment. Towards the end of his training, Kyle was part of a team that took on a challenging web/database project for one of our clients. Here his work
 		ethic and intelligence came to the fore. Kyle is a great member of a team–professional and efficient, hardworking and bright.</p>
 
-		<p>	Kyle completed training in the following areas while attending our Academy: 
-		Computer Science Fundamentals, HTML5, CSS3, WordPress, Version Control, TFS and other technologies. 
-		He excelled in learning ASP.Net, MVC, SQL, Python, JavaScript and C#. 
+		<p>	Kyle completed training in the following areas while attending our Academy:
+		Computer Science Fundamentals, HTML5, CSS3, WordPress, Version Control, TFS and other technologies.
+		He excelled in learning ASP.Net, MVC, SQL, Python, JavaScript and C#.
 		Kyle demonstrated great competence in those languages.</p>
 
 		<p>	Kyle has worked hard to become a very able, well-rounded entry-level software developer, armed with the current skills needed in the marketplace.</p>
 
-		<p>	I am very proud of Kyle and recommend him unequivocally for hire in a developer position. He is both intelligent and self-motivated and will be a great member of a development 
+		<p>	I am very proud of Kyle and recommend him unequivocally for hire in a developer position. He is both intelligent and self-motivated and will be a great member of a development
 		team. I welcome any questions you may have about Kyle or about the course of study he completed here at the Academy.</p>
 
 		Sincerely,<br />
@@ -214,17 +245,6 @@
 		Adam Smith<br />
 		Lead Instructor<br />
 		The Tech Academy<br />
- 	</div>
+ 	</section>
 </body>
 </html>
-
-<script>
-  function displayElementById(Id) {
-      var divs = (document).getElementsByTagName('div');
-      for (var i = 0; i < divs.length; i++) {
-        divs[i].style.display = 'none';
-      }
-      (document).getElementById(Id).style.display = 'block'
-
-  }
-</script>
